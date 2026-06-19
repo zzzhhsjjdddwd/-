@@ -1,0 +1,23 @@
+{
+  "name": "yunqi-light-meal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "云栖浅食 · 企业级 PWA 点餐套装（客户点餐 + 商家后台，共享数据库）",
+  "scripts": {
+    "install:all": "npm install && cd api && npm install && cd ../apps/customer && npm install && cd ../merchant && npm install",
+    "dev": "concurrently -n API,CUST,MERCH -c green.bold,cyan.bold,magenta.bold \"npm:dev:api\" \"npm:dev:customer\" \"npm:dev:merchant\"",
+    "dev:api": "cd api && npm run dev",
+    "dev:customer": "cd apps/customer && npm run dev",
+    "dev:merchant": "cd apps/merchant && npm run dev",
+    "build": "npm run build:customer && npm run build:merchant && npm run build:api",
+    "build:customer": "cd apps/customer && npm run build",
+    "build:merchant": "cd apps/merchant && npm run build",
+    "build:api": "cd api && npm run build",
+    "build:pages": "node scripts/build-pages.js",
+    "start": "cd api && npm start",
+    "seed": "cd api && npm run seed"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

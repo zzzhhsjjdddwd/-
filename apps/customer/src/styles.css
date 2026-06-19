@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== 全局设计系统 ========== */
+@layer base {
+  :root {
+    --porcelain-50: #FBF6EB;
+    --porcelain-100: #F4ECDA;
+    --water-50: #D4E3EB;
+    --water-100: #B9D4DE;
+    --gold-500: #C9A96E;
+    --gold-700: #8F7A4A;
+    --ink-500: #2B3A45;
+  }
+
+  html {
+    background: linear-gradient(180deg, #D4E3EB 0%, #FBF6EB 45%, #F4ECDA 100%);
+    background-attachment: fixed;
+  }
+
+  body {
+    font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+    color: #2B3A45;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'cv11', 'ss01';
+    min-height: 100vh;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Noto Serif SC', 'DM Serif Display', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: #2B3A45;
+  }
+
+  ::selection {
+    background: #E8D9A0;
+    color: #2B3A45;
+  }
+
+  button {
+    font-family: inherit;
+  }
+}
+
+/* ========== 组件库：玻璃拟态卡片 ========== */
+@layer components {
+  /* 主卡片 —— 瓷釉白 + 玻璃边框 + 柔和阴影 */
+  .card-porcelain {
+    background: linear-gradient(180deg, #FFFFFF 0%, #FBF6EB 100%);
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    border-radius: 24px;
+    box-shadow: 0 2px 8px rgba(43,58,69,0.06), 0 12px 24px rgba(43,58,69,0.04), inset 0 1px 0 rgba(255,255,255,0.8);
+  }
+
+  /* 玻璃卡 —— 半透明 + 模糊 */
+  .card-glass {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(43,58,69,0.08), inset 0 1px 0 rgba(255,255,255,0.8);
+  }
+
+  /* 金色高级按钮 */
+  .btn-gold {
+    background: linear-gradient(135deg, #E8D9A0 0%, #C9A96E 55%, #8F7A4A 100%);
+    color: #FFFFFF;
+    border-radius: 999px;
+    padding: 0.9rem 2rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    box-shadow: 0 6px 20px rgba(201,169,110,0.35), 0 2px 6px rgba(201,169,110,0.2), inset 0 1px 0 rgba(255,255,255,0.4);
+    transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease;
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(201,169,110,0.45), 0 4px 10px rgba(201,169,110,0.2);
+  }
+  .btn-gold:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  /* 瓷白按钮 */
+  .btn-porcelain {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F4ECDA 100%);
+    color: #2B3A45;
+    border-radius: 999px;
+    padding: 0.9rem 2rem;
+    font-weight: 500;
+    border: 1px solid rgba(201, 169, 110, 0.25);
+    box-shadow: 0 2px 6px rgba(43,58,69,0.06), inset 0 1px 0 rgba(255,255,255,0.9);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s;
+  }
+  .btn-porcelain:hover {
+    border-color: rgba(201, 169, 110, 0.5);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(143,122,74,0.12);
+  }
+
+  /* 水蓝色按钮 */
+  .btn-water {
+    background: linear-gradient(135deg, #B9D4DE 0%, #8FB4CC 100%);
+    color: #FFFFFF;
+    border-radius: 999px;
+    padding: 0.9rem 2rem;
+    font-weight: 500;
+    box-shadow: 0 6px 18px rgba(143,180,204,0.3), inset 0 1px 0 rgba(255,255,255,0.4);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .btn-water:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(143,180,204,0.4);
+  }
+
+  /* 金色文字 */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #E8D9A0 0%, #C9A96E 50%, #8F7A4A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* 金边分割线 */
+  .divider-gold {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(201,169,110,0.4) 50%, transparent 100%);
+  }
+
+  /* 输入框 —— 金边装饰 */
+  .input-gold {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1.5px solid rgba(201,169,110,0.25);
+    border-radius: 16px;
+    padding: 0.85rem 1.2rem;
+    color: #2B3A45;
+    font-size: 0.95rem;
+    transition: all .25s ease;
+    outline: none;
+  }
+  .input-gold::placeholder { color: #6E7A85; opacity: 0.6; }
+  .input-gold:focus {
+    border-color: #C9A96E;
+    box-shadow: 0 0 0 4px rgba(201,169,110,0.12);
+  }
+
+  /* 徽标/标签 */
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.28rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    background: rgba(201,169,110,0.1);
+    color: #8F7A4A;
+    border: 1px solid rgba(201,169,110,0.25);
+  }
+  .tag-water {
+    background: rgba(143,180,204,0.15);
+    color: #5A7E99;
+    border: 1px solid rgba(143,180,204,0.3);
+  }
+
+  /* 装饰圆点背景 */
+  .bg-dots {
+    background-image: radial-gradient(circle, rgba(201,169,110,0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}

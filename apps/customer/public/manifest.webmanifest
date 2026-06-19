@@ -1,0 +1,15 @@
+{
+  "name": "云栖浅食 · 点餐",
+  "short_name": "云栖浅食",
+  "description": "东方禅意轻食餐厅 · 在线点餐",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FBF6EB",
+  "theme_color": "#D4E3EB",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

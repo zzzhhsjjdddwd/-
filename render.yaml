@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: yunqi-api
+    runtime: node
+    repo: https://github.com/zzzhhsjjdddwd/-.git
+    branch: main
+    buildCommand: cd api && npm install --production=false && npm run build
+    startCommand: cd api && npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "10000"
+      - key: DATA_DIR
+        value: /opt/render/project/src/data
+    disk:
+      name: yunqi-data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1
+    plan: free
+    autoDeploy: yes

@@ -1,0 +1,10 @@
+{
+  "name": "云栖浅食 · 商家后台",
+  "short_name": "商家后台",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F5F1EA",
+  "theme_color": "#1B2A2E",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

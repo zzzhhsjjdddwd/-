@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8D9A0"/>
+      <stop offset="50%" stop-color="#C9A96E"/>
+      <stop offset="100%" stop-color="#8F7A4A"/>
+    </linearGradient>
+    <linearGradient id="porcelain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBF6EB"/>
+      <stop offset="100%" stop-color="#EDE4D0"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B9D4DE"/>
+      <stop offset="100%" stop-color="#8FB4CC"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#2B3A45" flood-opacity="0.15"/>
+    </filter>
+    <filter id="innerGlow">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <!-- 外圈金边 -->
+    <circle cx="256" cy="256" r="230" fill="url(#porcelain)" stroke="url(#goldGrad)" stroke-width="4"/>
+    <circle cx="256" cy="256" r="208" fill="none" stroke="url(#goldGrad)" stroke-width="2.5"/>
+
+    <!-- 上半部米白瓷釉 -->
+    <path d="M 56,256 A 200,200 0 0 1 456,256 L 456,280 L 56,280 Z" fill="url(#porcelain)"/>
+
+    <!-- 下半部浅蓝水域 -->
+    <path d="M 56,280 L 456,280 A 200,200 0 0 1 56,256 Z" fill="url(#water)"/>
+
+    <!-- 水平分界线（金色） -->
+    <line x1="64" y1="280" x2="448" y2="280" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- 云纹（有机曲线） -->
+    <path d="M 120,230 Q 160,190 220,200 Q 260,170 310,195 Q 360,180 400,220 Q 380,240 340,235 Q 310,255 260,240 Q 220,255 170,245 Q 140,250 120,230 Z"
+          fill="none" stroke="url(#goldGrad)" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M 120,230 Q 160,190 220,200 Q 260,170 310,195 Q 360,180 400,220 Q 380,240 340,235 Q 310,255 260,240 Q 220,255 170,245 Q 140,250 120,230 Z"
+          fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" opacity="0.5"/>
+
+    <!-- 山（两座） -->
+    <path d="M 130,280 Q 180,200 230,280 Z" fill="url(#water)" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M 270,280 Q 330,195 395,280 Z" fill="url(#water)" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linejoin="round"/>
+
+    <!-- 云中小圆点装饰 -->
+    <circle cx="135" cy="245" r="6" fill="url(#goldGrad)"/>
+    <circle cx="385" cy="248" r="4" fill="none" stroke="url(#goldGrad)" stroke-width="2.5"/>
+
+    <!-- 茶叶（双叶） -->
+    <g transform="translate(256,370)">
+      <!-- 左叶 -->
+      <path d="M 0,0 Q -55,-35 -90,-5 Q -85,40 -10,25 Z" fill="url(#porcelain)" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M 0,0 Q -45,-20 -80,0" fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.85"/>
+      <path d="M -20,-5 Q -30,8 -38,20" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.7"/>
+      <path d="M -40,-10 Q -55,5 -62,20" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.7"/>
+      <path d="M -70,0 Q -78,12 -82,22" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.7"/>
+
+      <!-- 右叶（镜像） -->
+      <path d="M 0,0 Q 55,-35 90,-5 Q 85,40 10,25 Z" fill="url(#porcelain)" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M 0,0 Q 45,-20 80,0" fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.85"/>
+      <path d="M 20,-5 Q 30,8 38,20" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.7"/>
+      <path d="M 40,-10 Q 55,5 62,20" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.7"/>
+      <path d="M 70,0 Q 78,12 82,22" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.7"/>
+
+      <!-- 叶脉 -->
+      <line x1="0" y1="0" x2="0" y2="18" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- 水面波纹 -->
+      <line x1="-110" y1="25" x2="-35" y2="25" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-95" y1="38" x2="-55" y2="38" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="35" y1="25" x2="110" y2="25" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="55" y1="38" x2="95" y2="38" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- "云栖浅食" 四个汉字字符位（标题字体区） -->
+    <g fill="url(#goldGrad)" font-family="'Noto Serif SC', serif" font-weight="700" letter-spacing="4">
+      <text x="110" y="155" font-size="64">云</text>
+      <text x="190" y="155" font-size="64">栖</text>
+      <text x="278" y="155" font-size="64">浅</text>
+      <text x="360" y="155" font-size="64">食</text>
+    </g>
+
+    <!-- 内描边 -->
+    <circle cx="256" cy="256" r="208" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.4"/>
+  </g>
+</svg>
