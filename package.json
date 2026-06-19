@@ -2,6 +2,7 @@
   "name": "yunqi-light-meal",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "云栖浅食 · 企业级 PWA 点餐套装（客户点餐 + 商家后台，共享数据库）",
   "scripts": {
     "install:all": "npm install && cd api && npm install && cd ../apps/customer && npm install && cd ../merchant && npm install",

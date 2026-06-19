@@ -2,8 +2,13 @@
 node_modules/
 **/node_modules/
 
-# 构建产物
-dist/
+# 构建产物和压缩包
+yunqi-local/
+yunqi-pwa-*.zip
+yunqi-pwa-*.tar.gz
+deploy.sh
+run.sh
+yunqi-*
 **/dist/
 api/dist/
 apps/*/dist/
